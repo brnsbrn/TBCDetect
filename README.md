@@ -1,4 +1,4 @@
-# TBCDetect
+# TBDetect
 Aplikasi berupa website yang dapat menganalisa hasil x-ray dada seseorang apakah termasuk normal atau terkena tuberculosis. Web ini dibuat menggunakan framework Flask dengan memanfaatkan algoritma _Deep Learning_ atau lebih spesifiknya dengan metode
 _Convolutional Neural Network_
 
@@ -16,7 +16,7 @@ Untuk menjalankan website di localhost anda, silahkan ikuti langkah-langkah beri
 ![image](https://user-images.githubusercontent.com/113587270/203745039-6d30dddc-9a0b-494b-ab1a-ac5e8c184f40.png)
 ### Buat Direktori Baru untuk menampung file project
 ![image](https://user-images.githubusercontent.com/113587270/203745732-530b7949-0074-4de6-bec2-1ed59b399d5b.png)
-### Letakkan Semua File yang ada di repository ini ke dalam direktori yang baru saja dibuat
+### Ekstrak file zip kemudian Letakkan Semua File yang ada di repository ini ke dalam direktori yang baru saja dibuat
 ![image](https://user-images.githubusercontent.com/113587270/203747226-537ffd1c-359d-4443-821e-e0746141dd1d.png)
 ### Akses File Direktori yang sudah dibuat
 ![image](https://user-images.githubusercontent.com/113587270/203746029-e815ba70-1195-4466-8308-66618e9a77ce.png)
