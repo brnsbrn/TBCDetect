@@ -24,6 +24,8 @@ Untuk menjalankan website di localhost anda, silahkan ikuti langkah-langkah beri
 ![image](https://user-images.githubusercontent.com/113587270/203746671-41a01344-1ee9-46b1-ad78-d1266d55773c.png)
 ### Aktifkan virtual Environtment
 ![image](https://user-images.githubusercontent.com/113587270/203747446-c610edc8-ad26-4444-86fa-3da363f476b4.png)
+
+Setelah venv aktif, segera install module flask, tensorflow, numpy, dan pillow dengan menggunakan pip install
 ### Set file app.py
 ![image](https://user-images.githubusercontent.com/113587270/203747640-ad88f786-b7ff-47ec-81e4-1ed89abdb468.png)
 ### Run untuk menjalankan website
