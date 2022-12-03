@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, send_from_directory
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
@@ -12,17 +11,24 @@ app.config['UPLOAD_FOLDER'] = "static\images"
 model = load_model('model tbc.h5')
 class_dict = {0:'Normal', 1:'Tuberculosis'}
 
+@app.route('/')
+def beranda():
+    return render_template('indeks.html')
 
-@app.route('/', methods=['GET','POST'])
-def index():
+@app.route('/tutorial')
+def tutorial():
+    return render_template('tutorial.html')
+
+@app.route('/periksa', methods=['GET','POST'])
+def periksa():
     if request.method == 'POST':
         if request.files: 
             image = request.files['image']
             img_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
             image.save(img_path)
             prediction = get_output(img_path)
-            return render_template('index.html', uploaded_image=image.filename, prediction=prediction)
-    return render_template('index.html')
+            return render_template('periksa.html', uploaded_image=image.filename, prediction=prediction)
+    return render_template('periksa.html')
 
 def get_output(img_path):
     loaded_img = load_img(img_path, target_size=(64,64))
@@ -37,4 +43,3 @@ def send_uploaded_image(filename=''):
 
 if __name__ =='__main__':
     app.run(port=12000, debug = True)
-
