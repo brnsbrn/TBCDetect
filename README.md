@@ -4,11 +4,27 @@ _Convolutional Neural Network_
 
 ## Tampilan website
 Berikut ini tampilan dari website TBDetect
-![image](https://user-images.githubusercontent.com/113587270/203743871-2eea243e-54e6-4fb2-b823-7e2853b78403.png)
-![image](https://user-images.githubusercontent.com/113587270/203744070-55fa5fad-332a-454e-864f-e18ad4e524aa.png)
-![image](https://user-images.githubusercontent.com/113587270/203744199-aa414ffa-70bb-459c-be22-35290aca1e6d.png)
-![image](https://user-images.githubusercontent.com/113587270/203744258-6787b336-4fcf-4314-813d-017cc8b131c3.png)
-![image](https://user-images.githubusercontent.com/113587270/203744452-c8088480-0b0f-452c-9994-aa364d4f595c.png)
+### Beranda
+
+
+![image](https://user-images.githubusercontent.com/113587270/206158126-ccfec395-26a5-4a22-9743-dce231a188a4.png)
+![image](https://user-images.githubusercontent.com/113587270/206158280-56856b54-1f09-464b-a5f0-7ac48dce8f61.png)
+![image](https://user-images.githubusercontent.com/113587270/206158386-3e1985ea-a827-4796-b453-38c2f67400e9.png)
+![image](https://user-images.githubusercontent.com/113587270/206158469-9df68335-7168-4b88-bffc-8507897a0e2e.png)
+![image](https://user-images.githubusercontent.com/113587270/206158590-32665394-1846-45aa-8d41-1adaec9e6bf2.png)
+
+### Periksa
+
+
+![image](https://user-images.githubusercontent.com/113587270/206158820-b76b0ec6-a386-45d9-9abe-3fa12b6910ab.png)
+![image](https://user-images.githubusercontent.com/113587270/206159044-2e94e24a-c0fc-4d43-9159-c9fc3e36ebdd.png)
+![image](https://user-images.githubusercontent.com/113587270/206159181-00748ca0-d1d4-42a9-a2e8-0f1ce0966d06.png)
+
+### Tutorial
+
+
+![image](https://user-images.githubusercontent.com/113587270/206159373-534f8680-394e-4cdd-a67c-d2274b8dbcdd.png)
+
 
 ## Cara Menjalankan Website
 Untuk menjalankan website di localhost anda, silahkan ikuti langkah-langkah berikut (*NB: Pastikan anda sudah menginstall python versi terbaru di Laptop atau PC anda)
