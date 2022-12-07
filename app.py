@@ -12,7 +12,7 @@ model = load_model('model_tbc_regularizer.h5')
 
 @app.route('/')
 def beranda():
-    return render_template('indeks.html')
+    return render_template('index.html')
 
 @app.route('/tutorial')
 def tutorial():

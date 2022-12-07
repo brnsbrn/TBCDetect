@@ -67,37 +67,23 @@
         </div>
         <!-- end nav broadcrumb -->
 
-        <section class="result" id="result">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- <img src="./src/img/Group 3.png" alt="image-result">
-                    <div class="result-text">
-                        <h4>Hasil Deteksi: </h4>
-                        <h2>Tuberculosis / Normal</h2>
-                        <p>Ditemukan / tidak ditemukan tanda tuberculosis pada hasil x-ray anda.</p>
-                    </div> -->
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-
         <section class="upload">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-8 offset-lg-2">
-                        <h5 class="text-danger text-center">PERHATIAN!! Tolong jangan upload foto lain selain foto chest
-                            X-Ray.</h5>
+                        <div class="text-center">
+                            <h5 class="text-danger">PERHATIAN!! Tolong jangan upload foto lain selain foto chest
+                                X-Ray.</h5>
                             {% if uploaded_image %}
-                            <img src="{{url_for('send_uploaded_image', filename=uploaded_image)}}" class="mx-auto d-block" width='350'>
+                                <img src="{{url_for('send_uploaded_image', filename=uploaded_image)}}" class="mx-auto d-block" width='350'>
                             {% else %}
-                                <h2>Silahkan upload hasil rontgen dada anda</h2>
+                                <h3>Silahkan upload hasil Chest X-Ray anda</h3>
                             {% endif %}
                             {% if prediction %}
-                            <h3>Hasil Tes Rontgen Dada anda adalah: {{prediction}}</h3>
+                                <h4>Hasil Deteksi:</h4>
+                                <h1>{{prediction}}</h1>
                             {% endif %}
+                        </div>
                         <form method="post" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div class="custom-file">

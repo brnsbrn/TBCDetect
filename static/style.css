@@ -352,17 +352,17 @@ main {
   text-align: center;
 }
 
-.result img {
+.upload img {
   width: 300px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
-.result .result-text h4 {
+.upload h4 {
   font-weight: 500;
 }
 
-.result .result-text h2 {
-  padding: 10px 0;
+.upload h1 {
+  padding: 5px 0;
 }
 
 .information-text {

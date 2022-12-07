@@ -1,238 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <title>TBDetect</title>
+    <title>TBDetect | Home</title>
 </head>
+
 <body>
     <header>
-    <!-- navbar -->
-    <section class="navbar-area">
-        <div class="container">
-            <div class="row align-items-center">
+        <!-- navbar -->
+        <section class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
 
-                <div class="col-lg-12">
+                    <div class="col-lg-12">
 
-                    <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-logo" href="index.html">
-                            <h2>TBDetect</h2>
-                        </a>
-                        
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="toggler-icon"></span>
-                            <span class="toggler-icon"></span>
-                            <span class="toggler-icon"></span>
-                        </button>
-                        
-                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active"><a class="page-scroll" href="#">Beranda</a></li>
-                                <li class="nav-item"><a class="page-scroll" href="#cara-kerja">Cara Kerja</a></li>
-                                <li class="nav-item"><a class="page-scroll" href="#kelebihan">Kelebihan</a></li>
-                                <li class="nav-item"><a class="page-scroll" href="https://tbindonesia.or.id/pustaka-tbc/informasi/tentang-tbc/apa-itu-tbc/" target="_blank">Tentang TBC</a></li>
-                            </ul>
-                        </div>
-                    </nav> <!-- END nav-->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-logo" href="{{url_for('beranda')}}">
+                                <h2>TBC Detect</h2>
+                            </a>
 
-                    
-                </div> <!-- END col-->
-                
-                
-            </div> <!-- END row-->
-            <hr>
-        </div> <!-- END container-->
-    </section>
-    <!-- END navbar -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active"><a class="page-scroll" href="{{url_for('beranda')}}">Beranda<a></li>
+                                    <li class="nav-item"><a class="page-scroll" href="{{url_for('periksa')}}">Periksa</a></li>
+                                    <li class="nav-item"><a class="page-scroll" href="{{url_for('tutorial')}}">Tutorial</a></li>
+                                    <li class="nav-item"><a class="page-scroll"
+                                            href="https://tbindonesia.or.id/pustaka-tbc/informasi/tentang-tbc/apa-itu-tbc/" target="_blank">Tentang TBC</a>
+                                    </li>
+                                    </ul>
+                                    </div>
+                                    </nav> <!-- END nav-->
+
+</div> <!-- END col-->
+
+
+</div> <!-- END row-->
+<hr>
+</div> <!-- END container-->
+</section>
+<!-- END navbar -->
     </header>
 
     <main>
-    <!-- start HERO -->
-    <section class="hero-container" id="beranda">
-        <div class="container">
-            <div class="row group-item">
-
-                <div class="col-lg-6 order-1">
-                    <div class="hero-image">
-                        <div class="image">
-                            <img src="{{url_for('static', filename='hero.png')}}" class="img-fluid">
-                        </div> <!-- end image -->
-                    </div> <!-- end hero-image -->
-                </div> <!-- end col -->
-
-                <div class="col-lg-6 order-2">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1 class="title">Deteksi Tuberculosis</h1>
-                            <p class="text">Secara <span>gratis</span>, <span>cepat</span>, dan <span>mudah</span></p>
-                        </div>
-                        {% if uploaded_image %}
-                        <img src="{{url_for('send_uploaded_image', filename=uploaded_image)}}" width='350'>
-                        {% else %}
-                            <h2>Silahkan upload hasil rontgen dada anda</h2>
-                        {% endif %}
-                        {% if prediction %}
-                        <p>Hasil Tes Rontgen Dada anda adalah: {{prediction}}</p>
-                        {% endif %}
-                        <form method="post" enctype="multipart/form-data">
-                            <input type="file" name="image">
-                            <button type="submit">Periksa</button>
-                        </form>
-                        <!-- <form action="GET">
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input id="logo" type="file" class="custom-file-input">
-                                    <label for="logo" class="custom-file-label text-truncate">Choose file...</label>
-                                 </div> 
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
-                                </div>
-                            </div>
-                        </form> -->
-                        <small>Tutorial mengambil foto chest X-Ray bisa dilihat pada <span><a href="">tautan berikut</a></span></small>
-                    </div> <!-- end hero-content -->
-                </div> <!-- end col -->
-
-            </div> <!-- END row-->
-            <hr>
-        </div> <!-- END container-->
-
-    </section>
-    <!-- END HERO -->
-
-    <section class="cara-kerja" id="cara-kerja">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="section-title">
-                        <h1 class="title">Cara Kerja</h1>
-                    </div> <!-- end section title -->
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-
-            <div class="row group-item">
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_upload.png')}}" alt="">
-                        <h4>Upload X-Ray</h4>
-                        <p>Upload foto chest X-Ray sesuai dengan tutorial yang telah diberikan</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-                
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_gear.png')}}" alt="">
-                        <h4>Proses Deteksi TB</h4>
-                        <p>Sistem akan menganalisa foto X-Ray yang telah diberikan dengan bantuan AI</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_choice.png')}}" alt="">
-                        <h4>Hasil Deteksi Keluar</h4>
-                        <p>Sistem memberikan hasil deteksi TB berdasarkan analisa yang telah dilakukan</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-            </div>
-            <hr>
-        </div>
-    </section>
-
-    <section class="information-1">
-        <div class="container">
-            <div class="row group-item">
-                <div class="col-lg-4 col-md-12">
-                    <img src="{{url_for('static', filename='Group 3.png')}}" alt="img-tuberculosis">
-                </div> <!-- end col -->
-                <div class="col-lg-8 col-md-12 text">
-                    <h1>TBDetect memanfaatkan AI untuk mendeteksi TBC berdasarkan chest X-Ray</h1>
-                    <p>AI ini dibuat menggunakan algoritma Deep Learning dan dengan bantuan dataset dari <a href="">Kaggle</a>, kami menciptakan website yang bisa mendeteksi penyakit TB dengan waktu yang lebih cepat.</p>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </section>
-
-    <section class="kelebihan" id="kelebihan">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="section-title">
-                        <h1 class="title">Kelebihan</h1>
-                    </div> <!-- end section title -->
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-
-            <div class="row group-item">
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_stopwatch.png')}}" alt="">
-                        <p>Mempercepat proses deteksi TBC menjadi hanya beberapa saat</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-                
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_robot.png')}}" alt="">
-                        <p>Memanfaatkan AI sehingga hasill yang diberikan konsisten</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-
-                <div class="col-md-4 col-sm-12">
-                    <div class="single-item">
-                        <img src="{{url_for('static', filename='bi_brain.png')}}" alt="">
-                        <p>Meminimalisir subjektivitas dalam proses deteksi TBC</p>
-                    </div> <!-- end single-item -->
-                </div> <!-- end col -->
-            </div>
-            <hr>
-        </div>
-    </section>
-
-    <section id="keluhan" class="keluhan">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="section-title">
-                        <h1 class="title">Form Keluhan</h1>
-                        <p class="text">Isi form di bawah apabila anda mengalami kendala saat menggunakan layanan dari kami</p>
-                    </div> <!-- end section title -->
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-
-            <form action="#" method="POST">
+        <!-- start HERO -->
+        <section class="hero-container" id="beranda">
+            <div class="container">
                 <div class="row group-item">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" >
-                        </div>
-                        <div class="form-group">
-                            <label for="keluhan">Keluhan / Permasalahan</label>
-                            <textarea class="form-control" id="keluhan" rows="5"></textarea>
-                        </div>
+
+                    <div class="col-lg-6 order-1">
+                        <div class="hero-image">
+                            <div class="image">
+                                <img src="{{url_for('static', filename='hero.png')}}" class="img-fluid">
+                            </div> <!-- end image -->
+                        </div> <!-- end hero-image -->
                     </div> <!-- end col -->
 
-                    <div class="col-12">
-                        <small>*Kami memastikan bahwa data  data yang anda berikan AMAN dan TIDAK AKAN disebarluaskan kepada pihak manapun.</small>
-                    </div>
+                    <div class="col-lg-6 order-2">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="title">Deteksi Tuberculosis</h1>
+                                <p class="text"></p>
+                                <p class="text">Berdasarkan scan <span>X-Ray</span> secara <span>cepat</span>, dan
+                                    <span>mudah</span>
+                                </p>
+                                </div>
+                            <div class="hero-button text-center">
+                                <a href="{{url_for('periksa')}}" class="btn btn-dark">Periksa Sekarang</a>
+                            </div>
+                        </div> <!-- end hero-content -->
+                        </div> <!-- end col -->
 
-                    <div class="col-3">
-                        <button class="btn btn-outline-secondary">Kirim</button>
-                    </div> <!-- end col-->
+                </div> <!-- END row-->
+                <hr>
+                </div> <!-- END container-->
+
+        </section>
+        <!-- END HERO -->
+
+        <section class="cara-kerja" id="cara-kerja">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="section-title">
+                            <h1 class="title">Cara Kerja</h1>
+                        </div> <!-- end section title -->
+                    </div> <!-- end col -->
                 </div> <!-- end row -->
-            </form>
 
-        </div> <!-- end container -->
-    </section>
+                <div class="row group-item">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_upload.png')}}" alt="">
+                            <h4>Upload X-Ray</h4>
+                            <p>Upload foto chest X-Ray sesuai dengan tutorial yang telah diberikan</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+                
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_gear.png')}}" alt="">
+                            <h4>Proses Deteksi TB</h4>
+                            <p>Sistem akan menganalisa foto X-Ray yang telah diberikan dengan bantuan AI</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_choice.png')}}" alt="">
+                            <h4>Hasil Deteksi Keluar</h4>
+                            <p>Sistem memberikan hasil deteksi TB berdasarkan analisa yang telah dilakukan</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+                    </div>
+                    <hr>
+                    </div>
+                    </section>
+
+        <section class="information-1">
+            <div class="container">
+                <div class="row group-item">
+                    <div class="col-lg-4 col-md-12">
+                        <img src="{{url_for('static', filename='Group 3.png')}}" alt="img-tuberculosis">
+                    </div> <!-- end col -->
+                    <div class="col-lg-8 col-md-12 text">
+                        <h1>TBDetect memanfaatkan AI untuk mendeteksi TBC berdasarkan chest X-Ray</h1>
+                        <p>AI ini dibuat menggunakan algoritma Deep Learning dan dengan bantuan dataset dari <a href="">Kaggle</a>, kami
+                            menciptakan website yang bisa mendeteksi penyakit TB dengan
+                            waktu yang lebih cepat.</p>
+                        </div>
+                        </div>
+                        <hr>
+                        </div>
+                        </section>
+
+        <section class="kelebihan" id="kelebihan">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="section-title">
+                            <h1 class="title">Kelebihan</h1>
+                        </div> <!-- end section title -->
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+                <div class="row group-item">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_stopwatch.png')}}" alt="">
+                            <p>Mempercepat proses deteksi TBC menjadi hanya beberapa saat</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+                
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_robot.png')}}" alt="">
+                            <p>Memanfaatkan AI sehingga hasill yang diberikan konsisten</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="single-item">
+                            <img src="{{url_for('static', filename='bi_brain.png')}}" alt="">
+                            <p>Meminimalisir subjektivitas dalam proses deteksi TBC</p>
+                        </div> <!-- end single-item -->
+                    </div> <!-- end col -->
+                    </div>
+                    <hr>
+                    </div>
+                    </section>
+
+        <section id="keluhan" class="keluhan">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="section-title">
+                            <h1 class="title">Form Keluhan</h1>
+                            <p class="text">Isi form di bawah apabila anda mengalami kendala saat menggunakan layanan
+                                dari kami</p>
+                            </div> <!-- end section title -->
+                            </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+                <form action="#" method="POST">
+                    <div class="row group-item">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="nama">Nama</label>
+                                <input type="text" class="form-control" id="nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="keluhan">Keluhan / Permasalahan</label>
+                                    <textarea class="form-control" id="keluhan" rows="5"></textarea>
+                                </div>
+                                </div> <!-- end col -->
+
+                        <div class="col-12">
+                            <small>*Kami memastikan bahwa data data yang anda berikan AMAN dan TIDAK AKAN disebarluaskan
+                                kepada pihak manapun.</small>
+                            </div>
+
+                        <div class="col-3">
+                            <button class="btn btn-outline-dark">Kirim</button>
+                            </div> <!-- end col-->
+                            </div> <!-- end row -->
+                            </form>
+
+            </div> <!-- end container -->
+            </section>
     </main>
 
     <footer>
@@ -243,8 +233,6 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> -->
-    <!-- <script src="js/script.js"></script> -->
 </body>
+
 </html>
