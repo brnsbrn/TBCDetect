@@ -8,7 +8,7 @@ import os
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "static\images"
-model = load_model('model tbc.h5')
+model = load_model('model_tbc_regularizer.h5')
 class_dict = {0:'Normal', 1:'Tuberculosis'}
 
 @app.route('/')
@@ -31,10 +31,15 @@ def periksa():
     return render_template('periksa.html')
 
 def get_output(img_path):
-    loaded_img = load_img(img_path, target_size=(64,64))
+    loaded_img = load_img(img_path, target_size=(124,124))
     img_array = img_to_array(loaded_img) / 255.0
-    img_array = expand_dims(img_array,0)
-    predicted_bit = np.argmax(model.predict(img_array))
+    img_array = np.expand_dims(img_array,0)
+    predicted_bit = model.predict(img_array)
+    print(predicted_bit)
+    if predicted_bit[0]<=0.5:
+        predicted_bit=0
+    else:
+        predicted_bit=1
     return class_dict[predicted_bit]
 
 @app.route('/display/<filename>')
